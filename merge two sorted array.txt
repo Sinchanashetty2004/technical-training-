@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main()
+{
+	int a[]={1,2,3,4,5,9,10};
+	int b[]={4,5,6,7};
+	int i,j,k;
+	int sizea=sizeof(a)/sizeof(a[0]);
+	int sizeb =sizeof(b)/sizeof(b[0]);
+	//int c[sizea+sizeb];
+	int c[11];
+	for( i=0,j=0,k=0;i<sizea && j<sizeb;k++)
+	{
+	    if(a[i]>b[j])
+        	c[k]=a[i++];
+		else
+	        c[k]=b[j++];
+	}
+	while(i<sizea)
+	    c[k++]=a[i++];
+	while(j<sizeb)
+	    c[k++]=b[j++];
+	    for(int index=0;index<sizea+sizeb;index++)
+	printf("%d\t",c[index]);
+	
+
+	return 0;
+}
